@@ -1,0 +1,7 @@
+1st step
+Build Image
+ + docker build -t image:vol . 
+
+2nd step
+Build COntainer using image and volume 
+ + docker run -d -p 3000:80 --rm --name feedbackapp -v myvol:/app/feedback -v "[Your absolute path]:/app" -v /app/node_modules image:vol
