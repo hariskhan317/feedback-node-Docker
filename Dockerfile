@@ -2,8 +2,6 @@ FROM node:14
 
 WORKDIR /app
 
-ARG DEFAULT_PORT=80
-
 RUN mkdir temp feedback
 
 COPY package.json .
@@ -11,6 +9,8 @@ COPY package.json .
 RUN npm install
 
 COPY . .
+
+ARG DEFAULT_PORT=80
 
 ENV PORT DEFAULT_PORT
 
